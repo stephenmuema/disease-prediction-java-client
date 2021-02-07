@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="panel" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="Hospital.Controllers.Physicians.PrescriptionReportController">
+    <children>
+        <TextArea fx:id="resultText" editable="false" layoutX="27.0" layoutY="63.0" prefHeight="314.0" prefWidth="543.0"
+                  promptText="Prompt text" wrapText="true">
+            <font>
+                <Font name="Arial Black" size="17.0"/>
+            </font>
+        </TextArea>
+        <Label fx:id="title" alignment="CENTER" layoutX="29.0" layoutY="14.0" prefHeight="26.0" prefWidth="543.0"
+               text="PRESCRIPTION" textOverrun="WORD_ELLIPSIS" underline="true">
+            <font>
+                <Font name="Arial Black" size="11.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

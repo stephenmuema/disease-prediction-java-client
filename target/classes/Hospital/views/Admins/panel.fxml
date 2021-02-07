@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.WebView?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="basicscene"
+            stylesheets="@../css/basicscene.css" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="Hospital.Controllers.Admins.PanelController">
+    <children>
+        <Label fx:id="clock" alignment="CENTER" layoutX="51.0" layoutY="6.0" prefHeight="50.0" prefWidth="356.0"
+               text="TIME">
+            <font>
+                <Font size="30.0"/>
+            </font>
+        </Label>
+        <Label fx:id="title" alignment="CENTER" layoutX="447.0" layoutY="4.0" prefHeight="50.0" prefWidth="630.0"
+               text="E-Doc Admin Panel">
+            <font>
+                <Font size="27.0"/>
+            </font>
+        </Label>
+        <TabPane fx:id="tabpane" layoutX="5.0" layoutY="51.0" prefHeight="650.0" prefWidth="1200.0"
+                 tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="regstaff" text="REGISTER STAFF">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="252.0" layoutY="56.0" prefHeight="510.0" prefWidth="696.0"
+                                            style="-fx-background-color: white;" styleClass="innerform">
+                                    <children>
+                                        <TextField fx:id="username" alignment="CENTER" layoutX="27.0" layoutY="14.0"
+                                                   prefHeight="50.0" prefWidth="340.0" promptText="NAME">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="useremail" alignment="CENTER" layoutX="27.0" layoutY="71.0"
+                                                   prefHeight="50.0" prefWidth="342.0" promptText="EMAIL">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="useridentifier" alignment="CENTER" layoutX="27.0"
+                                                   layoutY="132.0" prefHeight="50.0" prefWidth="348.0"
+                                                   promptText="IDENTIFIER">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                        </TextField>
+                                        <TextArea fx:id="userdescription" layoutX="47.0" layoutY="189.0"
+                                                  prefHeight="183.0" prefWidth="639.0"
+                                                  promptText="SHORT DESCRIPTION ABOUT THE STAFF MEMBER....">
+                                            <font>
+                                                <Font size="17.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <Button fx:id="adduser" layoutX="219.0" layoutY="400.0" mnemonicParsing="false"
+                                                prefHeight="79.0" prefWidth="296.0" text="SUBMIT">
+                                            <font>
+                                                <Font size="21.0"/>
+                                            </font>
+                                        </Button>
+                                        <ChoiceBox fx:id="role" layoutX="431.0" layoutY="14.0" prefHeight="50.0"
+                                                   prefWidth="243.0" value="DOCTOR">
+                                            <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                    <String fx:value="DOCTOR"/>
+                                                    <String fx:value="LAB TECH"/>
+                                                    <String fx:value="ADMIN"/>
+                                                    <String fx:value="RECEPTIONIST"/>
+                                                </FXCollections>
+                                            </items>
+                                        </ChoiceBox>
+                                        <Button fx:id="addcertfile" layoutX="439.0" layoutY="128.0"
+                                                mnemonicParsing="false" prefHeight="50.0" prefWidth="215.0"
+                                                style="-fx-background-color: lightgreen;" text="GET PDF CERTIFICATE"/>
+                                        <TextField fx:id="location" alignment="CENTER" layoutX="431.0" layoutY="68.0"
+                                                   prefHeight="50.0" prefWidth="240.0" promptText="LOCATION">
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="patientinfo" text="VIEW PATIENT INFORMATION">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="searchPatientEmail" alignment="CENTER" layoutX="14.0" layoutY="14.0"
+                                           prefHeight="35.0" prefWidth="408.0" promptText="PATIENT EMAIL">
+                                    <font>
+                                        <Font size="20.0"/>
+                                    </font>
+                                </TextField>
+                                <Button fx:id="searchpatientbutton" layoutX="438.0" layoutY="14.0"
+                                        mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="SEARCH">
+                                    <font>
+                                        <Font size="20.0"/>
+                                    </font>
+                                </Button>
+                                <AnchorPane layoutX="98.0" layoutY="87.0" prefHeight="479.0" prefWidth="1141.0"
+                                            style="-fx-background-color: white;" styleClass="innerform">
+                                    <children>
+                                        <ScrollPane layoutX="22.0" layoutY="23.0" prefHeight="422.0" prefWidth="734.0"/>
+                                        <TableView fx:id="tablehistory" layoutX="22.0" layoutY="24.0" prefHeight="419.0"
+                                                   prefWidth="732.0">
+                                            <columns>
+                                                <TableColumn fx:id="tablehistoryId" editable="false" prefWidth="48.0"
+                                                             text="NO."/>
+                                                <TableColumn fx:id="tablehistoryDate" prefWidth="165.0" text="DATE"/>
+                                                <TableColumn fx:id="tablehistoryDoctor" prefWidth="110.0"
+                                                             text="DOCTOR"/>
+                                                <TableColumn fx:id="tablehistoryPrescription" prefWidth="200.0"
+                                                             text="PRESCRIPTION"/>
+                                                <TableColumn fx:id="tablehistoryCompleted" prefWidth="208.0"
+                                                             text="COMPLETED"/>
+                                                <!--                                                <TableColumn fx:id="prescriptionsTableTests" prefWidth="163.0"-->
+                                                <!--                                                             text="TESTS"/>-->
+                                                <!--                                                <TableColumn fx:id="prescriptionsTableRatings" prefWidth="123.0"-->
+                                                <!--                                                             text="RATINGS"/>-->
+                                            </columns>
+                                        </TableView>
+                                        <!--                                        <Button layoutX="829.0" layoutY="54.0" mnemonicParsing="false" prefHeight="49.0"-->
+                                        <!--                                                prefWidth="193.0" text="VIEW PRESCRIPTION"/>-->
+                                        <!--                                        <Button layoutX="829.0" layoutY="122.0" mnemonicParsing="false"-->
+                                        <!--                                                prefHeight="49.0" prefWidth="193.0" text="VIEW LAB TESTS"/>-->
+                                        <!--                                        <Button layoutX="829.0" layoutY="194.0" mnemonicParsing="false"-->
+                                        <!--                                                prefHeight="49.0" prefWidth="193.0" text="VIEW DIAGNOSIS"/>-->
+                                        <Button fx:id="genreport" layoutX="829.0" layoutY="259.0"
+                                                mnemonicParsing="false" prefHeight="49.0" prefWidth="193.0"
+                                                text="GET REPORT"/>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="staffinfo" text="VIEW STAFF INFORMATION">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane layoutX="16.0" layoutY="22.0" prefHeight="548.0" prefWidth="1169.0"
+                                            style="-fx-background-color: white;" styleClass="innerform">
+                                    <children>
+                                        <TableView fx:id="viewStaff" layoutX="34.0" layoutY="42.0" prefHeight="479.0"
+                                                   prefWidth="968.0">
+                                            <columns>
+                                                <TableColumn fx:id="viewStaffId" prefWidth="55.0" text="NO."/>
+                                                <TableColumn fx:id="viewStaffName" prefWidth="180.0" text="NAME"/>
+                                                <TableColumn fx:id="viewStaffEmail" prefWidth="212.0" text="EMAIL"/>
+                                                <TableColumn fx:id="viewStaffIdentity" prefWidth="183.0"
+                                                             text="IDENTIFIER"/>
+                                                <TableColumn fx:id="viewStaffBranch" prefWidth="183.0" text="BRANCH"/>
+                                                <TableColumn fx:id="viewStaffStatus" prefWidth="152.0" text="STATUS"/>
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="fire" layoutX="1025.0" layoutY="94.0" mnemonicParsing="false"
+                                                prefHeight="50.0" prefWidth="122.0" text="FIRE"/>
+                                        <Button fx:id="suspend" layoutX="1025.0" layoutY="175.0" mnemonicParsing="false"
+                                                prefHeight="50.0" prefWidth="122.0" text="SUSPEND"/>
+                                        <Button fx:id="leave" layoutX="1025.0" layoutY="257.0" mnemonicParsing="false"
+                                                prefHeight="50.0" prefWidth="122.0" text="LEAVE"/>
+                                        <Button fx:id="shortBreak" layoutX="1025.0" layoutY="337.0"
+                                                mnemonicParsing="false" prefHeight="50.0" prefWidth="122.0"
+                                                text="GIVE BREAK"/>
+                                        <Button fx:id="maternity" layoutX="1025.0" layoutY="416.0"
+                                                mnemonicParsing="false" prefHeight="50.0" prefWidth="122.0"
+                                                text="MATERNITY LEAVE"/>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="news" text="NEWS">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <WebView fx:id="webview" layoutY="2.0" prefHeight="619.0" prefWidth="1194.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="logout" layoutX="1043.0" layoutY="4.0" mnemonicParsing="false" prefHeight="41.0"
+                prefWidth="136.0" text="LOG OUT">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

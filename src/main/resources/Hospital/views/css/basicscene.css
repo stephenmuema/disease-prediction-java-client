@@ -1,0 +1,12 @@
+.innerform {
+    -fx-background-radius: 5px;
+}
+
+.basicscene {
+    -fx-background-color: linear-gradient(to right, rgb(231, 16, 102), rgba(48, 7, 13, 0.38));
+
+}
+
+.inputfield {
+    -fx-font-size: 19px;
+}
