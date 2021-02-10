@@ -13,7 +13,6 @@ public interface settings {
     IdentityHashMap<String, Boolean> changepassword = new IdentityHashMap<>();
     String[] des = {"jdbc:mysql://127.0.0.1/medica_client", "root", "1997"};
     String[] desSession = {"jdbc:mysql://127.0.0.1/medica_client_sessions", "root", "1997"};
-    //    String[] des = {"jdbc:mysql://nanotechsoftwares.co.ke:3306/nanotech_HospitalSystem", "nanotech_admin", ",4=y4,Zv6hR}"};
     String encryptionkey = "0123456789abcdef0123456789abcdef";
     String initVector = "abcdef9876543210";
     String appName = "Medica ";
